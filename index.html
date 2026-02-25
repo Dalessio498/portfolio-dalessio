@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalessio-DEV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html::selection {
+        background-color: #90fc6893;
+    }
+
+    body {
+        font-family: "Space Grotesk";
+        background-color: #88cf6f;
+    }
+
+    .initial-page {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        background-color: #a5fa85;
+        background-image: linear-gradient(to bottom, #a5fa85, #88cf6f)
+    }
+
+    .father-card-initial {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .neo-card-initial {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 4px solid rgb(0, 0, 0);
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        margin: 30px 10px;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .title {
+        padding: 20px;
+
+    }
+
+    .title h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .name {
+        padding: 20px;
+
+    }
+
+    .name h1 {
+        font-size: 3.1rem;
+        margin: 5px;
+        font-weight: bold;
+    }
+
+    .father-img-dev {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: 30px 0px 10px 30px;
+        border: 4px solid black;
+        width: fit-content;
+        height: fit-content;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        background-color: white;
+
+    }
+
+    .img-dev img {
+        width: 230px;
+    }
+
+    .father-button-contacts {
+        display: flex;
+        justify-content: end;
+        margin: 80px 40px 40px 40px;
+    }
+
+    .button-contacts {
+        width: fit-content;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        border: 4px solid black;
+        background-color: #ffb2ef;
+        font-family: "Space Grotesk";
+        padding: 5px 30px;
+    }
+
+    .button-contacts a {
+        font-family: "Space Grotesk";
+        font-size: 2.5rem;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+    }
+
+
+    .about {
+        height: auto;
+        width: 100%;
+        min-height: 100vh;
+        /* background-image: linear-gradient(to bottom, #595bfc, #4547c7); */
+        background-image: url(/public/img/bg4.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 40px;
+    }
+
+    .title-about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-about h1 {
+        width: fit-content;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        border: 4px solid black;
+        background-color: #96ff1e;
+        font-family: "Space Grotesk";
+        padding: 5px 30px;
+        color: black;
+        margin: 40px 0px;
+        font-weight: bold;
+    }
+
+    .vo-cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards-about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        margin: 0px 30px;
+    }
+
+    .flex-cards-about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .son-cards-about {
+        width: fit-content;
+        max-width: 1275px;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        border: 4px solid black;
+        background-color: #e7ffcb;
+        font-family: "Space Grotesk";
+        padding: 5px 30px;
+        color: black;
+        margin: 40px 0px;
+    }
+
+    .son-cards-about h1 {
+        font-size: 2.1rem;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        border-bottom: 5px black dashed;
+        width: fit-content;
+        font-weight: bold;
+        font-weight: 800;
+    }
+
+    .son-cards-about p {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .icon-card-about {
+        display: flex;
+        justify-content: end;
+    }
+
+    .son-cards-about i {
+        display: flex;
+        font-size: 2rem;
+        margin: 10px 0px 20px 0px;
+    }
+
+    .my-projects {
+        height: auto;
+        width: 100%;
+        /* background-image: linear-gradient(to bottom, #fc5959, #d13b3b); */
+        background-image: url(/public/img/bg5.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 50px;
+    }
+
+    .title-projects {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .title-projects h1 {
+        width: fit-content;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        border: 4px solid black;
+        background-color: #ffe91e;
+        font-family: "Space Grotesk";
+        padding: 5px 30px;
+        color: black;
+        margin: 40px 0px;
+        font-weight: bold;
+    }
+
+    .flex-cards-projects {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        height: fit-content;
+        row-gap: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .son-project {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        max-width: 600px;
+        height: fit-content;
+
+        flex-direction: column;
+        background-color: #fff387;
+        margin: 0px 30px;
+        padding: 14px;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        border: 4px solid black;
+        transition: 0.4s linear;
+    }
+
+    .son-project:hover {
+        scale: 1.02;
+    }
+
+    .son-project img {
+        width: 100%;
+        max-width: 700px;
+        border: 2px solid black;
+        box-shadow: 4px 4px 0px black;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .son-project h1 {
+        font-size: 2.5rem;
+        margin-bottom: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 5px;
+        border-bottom: black 5px dashed;
+    }
+
+    .son-project p {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    .icons-projects {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        column-gap: 15px;
+        margin-top: 20px;
+    }
+
+    .son-project i {
+        font-size: 2rem;
+        margin: 10px 6px;
+        color: #272000;
+    }
+
+    .son-project a {
+        border: 2px solid black;
+        box-shadow: 4px 4px 0px black;
+        background-color: rgb(255, 224, 46);
+        border-radius: 8px;
+        transition: 0.4s linear;
+    }
+
+    .son-project a:hover {
+        background-color: white;
+        scale: 1.02;
+        color: #ffe91e;
+        transform: translateY(-5px);
+    }
+
+    .skills {
+        width: 100%;
+        height: auto;
+        
+        /* background-color: #b16fee; */
+        background-image: url(/public/img/bg7.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 80px;
+    }
+
+    .title-skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .title-skills h1 {
+        width: fit-content;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        border: 4px solid black;
+        background-color: #6fffb1;
+        font-family: "Space Grotesk";
+        padding: 5px 30px;
+        color: black;
+        margin: 40px 0px;
+        font-weight: bold;
+    }
+
+    .vo-skills {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-cards-skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .son-skills {
+        margin: 0px 30px;
+        padding: 15px;
+        width: fit-content;
+        max-width: 600px;
+        height: fit-content;
+        background-color: #d2ffe6;
+        border: 4px solid black;
+        border-radius: 8px;
+        box-shadow: 4px 4px 0px black;
+        text-align: center;
+    }
+
+    .son-skills-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 5px;
+        margin-bottom: 7px;
+    }
+
+    .cont-title-skills {
+        border-bottom: black 5px dashed;
+        display: flex;
+        align-items: center;
+    }
+
+    .son-skills-title h1 {
+        font-size: 2.5rem;
+
+    }
+
+    .son-skills-title i {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+
+    .son-skills p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        width: fit-content;
+        margin-right: 20px;
+    }
+
+    .icons-skills {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px 0px;
+        gap: 13px;
+    }
+
+    .icons-skills i {
+        font-size: 2rem;
+        color:#1b0035;
+    }
+
+    .father-icon-skills {
+        padding: 5px;
+        border: 4px solid black;
+        border-radius: 8px;
+        box-shadow: 2px 2px 0px;
+        background-color: #f9f0ff;
+        transition: 0.4s linear;
+    }
+
+    .father-icon-skills:hover{
+        scale: 1.02;
+        transform: translateY(-5px);
+        background-color: #ebceff;
+    }
+
+    @media (max-width: 420px) {
+        .title {
+            padding: 20px;
+        }
+
+        .title h1 {
+            font-size: 2rem;
+        }
+
+        .name {
+            padding: 20px;
+
+        }
+
+        .name h1 {
+            font-size: 2.1rem;
+            margin: 5px;
+        }
+    }
+</style>
+
+<body>
+    <section class="initial-page">
+        <div class="father-card-initial">
+            <div class="neo-card-initial">
+                <div class="title">
+                    <h1>Portifólio<br>Pessoal</h1>
+                </div>
+                <div class="name">
+                    <h1>DALESSIO.DEV</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="father-img-dev">
+            <div class="img-dev">
+                <img src="/public/img/dalessio-dev-logo.png" alt="Logo-dev">
+            </div>
+        </div>
+
+        <div class="father-button-contacts">
+            <div class="button-contacts">
+                <a target="_blank" href="https://www.instagram.com/dalessio.dev/">Contatos</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about">
+        <div class="title-about">
+            <h1>Sobre mim</h1>
+        </div>
+
+        <div class="vo-cards">
+            <div class="cards-about">
+                <div class="flex-cards-about">
+                    <div class="son-cards-about">
+                        <h1>Resumo</h1>
+                        <p>Me chamo Marco Antonio Dalessio e atualmente estou cursando Desenvolvimento de Sistemas no
+                            SENAI, me encontro no 3º Semestre!<br>Atualmente me encontro como jovem aprendiz no grupo
+                            Monto, porem ando atras de alguns Freelas!</p>
+                        <div class="icon-card-about">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="son-cards-about">
+                        <h1>Habilidades</h1>
+                        <p>Sou capaz de criar páginas web animadas, suaves e atualizadas, hospedagem, banco de dados,
+                            nuvem e aplicações simples de back-end!</p>
+                        <div class="icon-card-about">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                    </div>
+
+                    <div class="son-cards-about">
+                        <h1>Caracteristicas</h1>
+                        <p>Tenho boa comunicação, muito sociavel, extremamente curioso, apaixonado em tecnologias (até
+                            mesmo as mais simples)!</p>
+                        <div class="icon-card-about">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-projects">
+        <div class="title-projects">
+            <h1>Meus Projetos</h1>
+        </div>
+
+        <div class="vo-projects">
+            <div class="cards-projects">
+                <div class="flex-cards-projects">
+                    <div class="son-project">
+                        <img src="/public/img/byte-brain-img.jpeg" alt="">
+                        <h1>ByteBrain</h1>
+                        <p>Projeto desenvolvido para Atividade do Senai na materia de Front-End, utilizando de HTML, CSS
+                            e JS puro</p>
+                        <div class="icons-projects">
+                            <a href=""><i class="fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="son-project">
+                        <img src="/public/img/mario-img.jpeg" alt="">
+                        <h1>MarioJump</h1>
+                        <p>Projeto desenvolvido para aprendizado pessoal, de videos no youtube utilzando de HTML, CSS e
+                            JS puro</p>
+                        <div class="icons-projects">
+                            <a href=""><i class="fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="son-project">
+                        <img src="/public/img/oliveiras-img.png" alt="">
+                        <h1>Oliveiras</h1>
+                        <p>Projeto inspirado em uma barbearia da região, foi feito para aprendizado pessoal com HTML,
+                            CSS e JS</p>
+                        <div class="icons-projects">
+                            <a href=""><i class="fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="title-skills">
+            <h1>Conhecimentos</h1>
+        </div>
+        <div class="vo-skills">
+            <div class="flex-cards-skills">
+                <div class="son-skills">
+                    <div class="son-skills-title">
+                        <div class="cont-title-skills">
+                            <i class="fa-solid fa-crown"></i>
+                            <h1>Dominados</h1>
+                        </div>
+                    </div>
+                    <p>Todos conhecimentos que consigo codar com certa tranquilidade, tanto como Back-End e Front-End!
+                    </p>
+                    <div class="icons-skills">
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="son-skills">
+                    <div class="son-skills-title">
+                        <div class="cont-title-skills">
+                            <i class="fa-solid fa-crown"></i>
+                            <h1>Aprendendo</h1>
+                        </div>
+                    </div>
+                    <p>Tudo que eu ando aprendendo tanto no senai como em estudos pessoais!
+                    </p>
+                    <div class="icons-skills">
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-node"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-npm"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-android"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="son-skills">
+                    <div class="son-skills-title">
+                        <div class="cont-title-skills">
+                            <i class="fa-solid fa-crown"></i>
+                            <h1>Futuro</h1>
+                        </div>
+                    </div>
+                    <p>Com que tecnologias eu desejo aperfeiçoar meu conhecimento como Desenvolvedor!
+                    </p>
+                    <div class="icons-skills">
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-angular"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-php"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-bootstrap"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-openai"></i>
+                        </div>
+                        <div class="father-icon-skills">
+                            <i class="fa-brands fa-vuejs"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
