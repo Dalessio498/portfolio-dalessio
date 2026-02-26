@@ -5,17 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dalessio-DEV</title>
+    <link rel="shortcut icon" href="public/img/dalessio-dev-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js" defer></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+    html.lenis,
+    html.lenis body {
+        height: auto;
+    }
+
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+        overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+    }
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+
     }
 
     html::selection {
@@ -31,8 +61,11 @@
         width: 100%;
         height: auto;
         min-height: 100vh;
-        background-color: #a5fa85;
-        background-image: linear-gradient(to bottom, #a5fa85, #88cf6f)
+        /* background-color: #a5fa85; */
+        background-image: url(public/img/bg9.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
     }
 
     .father-card-initial {
@@ -78,11 +111,18 @@
         font-weight: bold;
     }
 
+    .vo-img-dev {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
     .father-img-dev {
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
-        margin: 30px 0px 10px 30px;
+        margin: 20px 0px;
         border: 4px solid black;
         width: fit-content;
         height: fit-content;
@@ -96,29 +136,6 @@
         width: 230px;
     }
 
-    .father-button-contacts {
-        display: flex;
-        justify-content: end;
-        margin: 80px 40px 40px 40px;
-    }
-
-    .button-contacts {
-        width: fit-content;
-        box-shadow: 8px 8px 0px black;
-        border-radius: 8px;
-        border: 4px solid black;
-        background-color: #ffb2ef;
-        font-family: "Space Grotesk";
-        padding: 5px 30px;
-    }
-
-    .button-contacts a {
-        font-family: "Space Grotesk";
-        font-size: 2.5rem;
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-    }
 
 
     .about {
@@ -126,10 +143,11 @@
         width: 100%;
         min-height: 100vh;
         /* background-image: linear-gradient(to bottom, #595bfc, #4547c7); */
-        background-image: url(/public/img/bg4.svg);
+        background-image: url(public/img/bg4.svg);
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 40px;
+        overflow-x: hidden;
     }
 
     .title-about {
@@ -175,7 +193,7 @@
 
     .son-cards-about {
         width: fit-content;
-        max-width: 1275px;
+        max-width: 1100px;
         box-shadow: 8px 8px 0px black;
         border-radius: 8px;
         border: 4px solid black;
@@ -184,6 +202,12 @@
         padding: 5px 30px;
         color: black;
         margin: 40px 0px;
+        transition: 0.4s linear;
+    }
+
+    .son-cards-about:hover {
+        scale: 1.02;
+        transform: translateY(-5px);
     }
 
     .son-cards-about h1 {
@@ -217,10 +241,11 @@
         height: auto;
         width: 100%;
         /* background-image: linear-gradient(to bottom, #fc5959, #d13b3b); */
-        background-image: url(/public/img/bg5.svg);
+        background-image: url(public/img/bg5.svg);
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 50px;
+        overflow-x: hidden;
     }
 
     .title-projects {
@@ -340,12 +365,13 @@
     .skills {
         width: 100%;
         height: auto;
-        
+
         /* background-color: #b16fee; */
-        background-image: url(/public/img/bg7.png);
+        background-image: url(public/img/bg7.png);
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 80px;
+        overflow-x: hidden;
     }
 
     .title-skills {
@@ -393,8 +419,14 @@
         background-color: #d2ffe6;
         border: 4px solid black;
         border-radius: 8px;
-        box-shadow: 4px 4px 0px black;
+        box-shadow: 8px 8px 0px black;
         text-align: center;
+        transition: 0.4s linear;
+    }
+
+    .son-skills:hover {
+        scale: 1.02;
+        transform: translateY(-5px);
     }
 
     .son-skills-title {
@@ -422,11 +454,19 @@
         margin-right: 10px;
     }
 
+    .p-skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
     .son-skills p {
         font-size: 1.2rem;
         font-weight: bold;
         width: fit-content;
-        margin-right: 20px;
+        margin: 0px 40px;
+        max-width: 600px;
     }
 
     .icons-skills {
@@ -441,7 +481,7 @@
 
     .icons-skills i {
         font-size: 2rem;
-        color:#1b0035;
+        color: #1b0035;
     }
 
     .father-icon-skills {
@@ -453,10 +493,122 @@
         transition: 0.4s linear;
     }
 
-    .father-icon-skills:hover{
+    .father-icon-skills:hover {
         scale: 1.02;
         transform: translateY(-5px);
         background-color: #ebceff;
+    }
+
+    footer {
+        width: 100%;
+        height: auto;
+        background-color: orange;
+        /* background-image: linear-gradient(to bottom, rgb(255, 166, 0), rgb(255, 165, 48)); */
+        background-image: url(public/img/bg8.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .father-card-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-footer {
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        margin: 20px;
+        border: 4px solid black;
+        box-shadow: 8px 8px 0px black;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-title h1 {
+        color: #351800;
+        font-size: 2rem;
+    }
+
+    .footer-title i {
+        font-size: 1.3rem;
+        color: #351800;
+        ;
+    }
+
+    .links-footer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        margin-top: 5px;
+    }
+
+    .links-footer a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: #351800;
+        font-weight: 400;
+        width: fit-content;
+        transition: 0.4s linear;
+    }
+
+    .links-footer a:hover {
+        transform: translateX(15px);
+        color: rgb(199, 129, 0);
+    }
+
+    .about-footer {
+        margin: 10px 0px;
+
+    }
+
+    .about-footer p {
+        margin-left: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 500px;
+        font-size: 1.1rem;
+        color: #351800;
+        font-weight: 400;
+    }
+
+    .contacts-footer {
+        margin: 10px 0px;
+    }
+
+    .contacts-icons {
+        margin-left: 30px;
+        width: fit-content;
+        display: flex;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .contacts-icons i {
+        font-size: 2rem;
+        color: #351800;
+    }
+
+    .contacts-icons a {
+        transition: 0.4s linear;
+    }
+
+    .contacts-icons a:hover {
+        scale: 1.02;
+        transform: translateY(-5px);
+        cursor: pointer;
     }
 
     @media (max-width: 420px) {
@@ -481,11 +633,11 @@
 </style>
 
 <body>
-    <section class="initial-page">
+    <section class="initial-page" id="initial-page">
         <div class="father-card-initial">
             <div class="neo-card-initial">
                 <div class="title">
-                    <h1>Portifólio<br>Pessoal</h1>
+                    <h1>Portfólio<br>Pessoal</h1>
                 </div>
                 <div class="name">
                     <h1>DALESSIO.DEV</h1>
@@ -493,21 +645,19 @@
             </div>
         </div>
 
-        <div class="father-img-dev">
-            <div class="img-dev">
-                <img src="/public/img/dalessio-dev-logo.png" alt="Logo-dev">
+        <div class="vo-img-dev">
+            <div class="father-img-dev">
+                <div class="img-dev">
+                    <img src="public/img/dalessio-dev-logo.png" alt="Logo-dev">
+                </div>
             </div>
         </div>
 
-        <div class="father-button-contacts">
-            <div class="button-contacts">
-                <a target="_blank" href="https://www.instagram.com/dalessio.dev/">Contatos</a>
-            </div>
-        </div>
+
 
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="title-about">
             <h1>Sobre mim</h1>
         </div>
@@ -517,9 +667,10 @@
                 <div class="flex-cards-about">
                     <div class="son-cards-about">
                         <h1>Resumo</h1>
-                        <p>Me chamo Marco Antonio Dalessio e atualmente estou cursando Desenvolvimento de Sistemas no
-                            SENAI, me encontro no 3º Semestre!<br>Atualmente me encontro como jovem aprendiz no grupo
-                            Monto, porem ando atras de alguns Freelas!</p>
+                        <p>Sou Marco Antonio Dalessio, cursando Desenvolvimento de Sistemas no SENAI (3º semestre) e
+                            Jovem Aprendiz no Grupo Monto. Transformo ideias em interfaces modernas e funcionais.
+                            Atualmente, também atuo como freelancer, focado em entregar projetos criativos e de alta
+                            qualidade.</p>
                         <div class="icon-card-about">
                             <i class="fa-solid fa-star"></i>
                         </div>
@@ -527,8 +678,10 @@
 
                     <div class="son-cards-about">
                         <h1>Habilidades</h1>
-                        <p>Sou capaz de criar páginas web animadas, suaves e atualizadas, hospedagem, banco de dados,
-                            nuvem e aplicações simples de back-end!</p>
+                        <p>Desenvolvo interfaces modernas com foco em animações fluidas e alta performance. Tenho
+                            experiência prática na criação de páginas responsivas, integrando soluções de back-end,
+                            banco de dados e nuvem, garantindo que o projeto seja funcional desde o código até a
+                            hospedagem.</p>
                         <div class="icon-card-about">
                             <i class="fa-solid fa-code"></i>
                         </div>
@@ -536,8 +689,10 @@
 
                     <div class="son-cards-about">
                         <h1>Caracteristicas</h1>
-                        <p>Tenho boa comunicação, muito sociavel, extremamente curioso, apaixonado em tecnologias (até
-                            mesmo as mais simples)!</p>
+                        <p>Possuo comunicação assertiva e facilidade em trabalhar em equipe, unindo um perfil sociável
+                            a uma mente extremamente curiosa. Sou apaixonado por tecnologia em todas as suas formas,
+                            buscando constantemente aprender novas ferramentas para resolver problemas de maneira
+                            criativa e eficiente.</p>
                         <div class="icon-card-about">
                             <i class="fa-solid fa-brain"></i>
                         </div>
@@ -548,7 +703,7 @@
         </div>
     </section>
 
-    <section class="my-projects">
+    <section class="my-projects" id="my-projects">
         <div class="title-projects">
             <h1>Meus Projetos</h1>
         </div>
@@ -556,36 +711,38 @@
         <div class="vo-projects">
             <div class="cards-projects">
                 <div class="flex-cards-projects">
-                    <div class="son-project">
-                        <img src="/public/img/byte-brain-img.jpeg" alt="">
+                    <div class="son-project" id="card1">
+                        <img src="public/img/byte-brain-img.jpeg" alt="">
                         <h1>ByteBrain</h1>
-                        <p>Projeto desenvolvido para Atividade do Senai na materia de Front-End, utilizando de HTML, CSS
-                            e JS puro</p>
+                        <p>Projeto desenvolvido no SENAI para a disciplina de Front-End. Focado na aplicação de
+                            conceitos modernos de estruturação e interatividade utilizando HTML, CSS e JavaScript
+                            Vanilla.</p>
                         <div class="icons-projects">
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                            <a href=""><i class="fa-solid fa-play"></i></a>
+                            <a href="https://github.com/Dalessio498/byte-brain" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://byte-brain.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
 
-                    <div class="son-project">
-                        <img src="/public/img/mario-img.jpeg" alt="">
+                    <div class="son-project" id="card2">
+                        <img src="public/img/mario-img.jpeg" alt="">
                         <h1>MarioJump</h1>
-                        <p>Projeto desenvolvido para aprendizado pessoal, de videos no youtube utilzando de HTML, CSS e
-                            JS puro</p>
+                        <p>"Desenvolvido para estudo de lógica de programação e manipulação de DOM. O projeto recria a
+                            mecânica de pulo do clássico Mario, utilizando HTML5, CSS3 e JavaScript Vanilla."</p>
                         <div class="icons-projects">
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                            <a href=""><i class="fa-solid fa-play"></i></a>
+                            <a href="https://github.com/Dalessio498/mario-jump" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://mario-jump-orcin.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
 
-                    <div class="son-project">
-                        <img src="/public/img/oliveiras-img.png" alt="">
+                    <div class="son-project" id="card3">
+                        <img src="public/img/oliveiras-img.png" alt="">
                         <h1>Oliveiras</h1>
-                        <p>Projeto inspirado em uma barbearia da região, foi feito para aprendizado pessoal com HTML,
-                            CSS e JS</p>
+                        <p>Projeto inspirado em uma barbearia real para praticar design responsivo e experiência do
+                            usuário (UX). Construído com HTML, CSS e JS, focando em uma interface moderna e intuitiva.
+                        </p>
                         <div class="icons-projects">
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                            <a href=""><i class="fa-solid fa-globe"></i></a>
+                            <a href="https://github.com/Dalessio498/Oliveiras" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://dalessio498.github.io/Oliveiras/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i></a>
                         </div>
                     </div>
 
@@ -594,21 +751,26 @@
         </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
         <div class="title-skills">
             <h1>Conhecimentos</h1>
         </div>
         <div class="vo-skills">
             <div class="flex-cards-skills">
-                <div class="son-skills">
+                <div class="son-skills" id="card10">
                     <div class="son-skills-title">
                         <div class="cont-title-skills">
                             <i class="fa-solid fa-crown"></i>
                             <h1>Dominados</h1>
                         </div>
                     </div>
-                    <p>Todos conhecimentos que consigo codar com certa tranquilidade, tanto como Back-End e Front-End!
-                    </p>
+                    <div class="p-skills">
+                        <p>Tecnologias que domino e aplico com autonomia em projetos Full-Stack. Tenho segurança no
+                            desenvolvimento de arquiteturas sólidas, desde a lógica estrutural no Back-End até a criação
+                            de
+                            interfaces dinâmicas no Front-End.
+                        </p>
+                    </div>
                     <div class="icons-skills">
                         <div class="father-icon-skills">
                             <i class="fa-brands fa-java"></i>
@@ -638,15 +800,21 @@
                     </div>
                 </div>
 
-                <div class="son-skills">
+                <div class="son-skills" id="card20">
                     <div class="son-skills-title">
                         <div class="cont-title-skills">
                             <i class="fa-solid fa-crown"></i>
                             <h1>Aprendendo</h1>
                         </div>
                     </div>
-                    <p>Tudo que eu ando aprendendo tanto no senai como em estudos pessoais!
-                    </p>
+                    <div class="p-skills">
+                        <p>Em constante evolução, aprofundando meus conhecimentos em tecnologias modernas que elevam o
+                            nível
+                            do desenvolvimento. Atualmente, foco no ecossistema JavaScript (React e Node.js) e em
+                            soluções
+                            de nuvem, buscando dominar ferramentas que otimizam a entrega e a escalabilidade.
+                        </p>
+                    </div>
                     <div class="icons-skills">
                         <div class="father-icon-skills">
                             <i class="fa-brands fa-js"></i>
@@ -673,15 +841,21 @@
                     </div>
                 </div>
 
-                <div class="son-skills">
+                <div class="son-skills" id="card30">
                     <div class="son-skills-title">
                         <div class="cont-title-skills">
                             <i class="fa-solid fa-crown"></i>
                             <h1>Futuro</h1>
                         </div>
                     </div>
-                    <p>Com que tecnologias eu desejo aperfeiçoar meu conhecimento como Desenvolvedor!
-                    </p>
+                    <div class="p-skills">
+                        <p>Minha meta é consolidar minha stack como desenvolvedor e explorar novas fronteiras, como
+                            Angular,
+                            PHP e Inteligência Artificial. Busco aperfeiçoar minha visão estratégica para criar
+                            arquiteturas
+                            de software cada vez mais robustas e preparadas para as demandas do mercado.
+                        </p>
+                    </div>
                     <div class="icons-skills">
                         <div class="father-icon-skills">
                             <i class="fa-brands fa-angular"></i>
@@ -705,7 +879,48 @@
         </div>
     </section>
 
+    <footer>
+        <div class="father-card-footer">
+            <div class="card-footer">
+                <div class="flex-cont-footer">
+                    <div class="footer-title">
+                        <i><i class="fa-solid fa-link"></i></i>
+                        <h1>Links</h1>
 
+                    </div>
+                    <div class="links-footer">
+
+                        <a href="#initial-page">Início</a>
+                        <a href="#about">Sobre</a>
+                        <a href="#my-projects">Projetos</a>
+                        <a href="#skills">Conhecimentos</a>
+                    </div>
+
+                    <div class="about-footer">
+                        <div class="footer-title">
+                            <i><i class="fa-solid fa-circle-info"></i></i>
+                            <h1>Sobre</h1>
+                        </div>
+                        <p>Desenvolvedor focado em criar experiências digitais de alto impacto. Unindo o aprendizado
+                            contínuo no SENAI e a parceria do Grupo Monto, busco entregar soluções que somam design
+                            moderno e código eficiente.</p>
+                    </div>
+
+                    <div class="contacts-footer">
+                        <div class="footer-title">
+                            <i class="fa-solid fa-address-book"></i>
+                            <h1>Contatos</h1>
+                        </div>
+                        <div class="contacts-icons">
+                            <a href="https://www.instagram.com/dalessio.dev/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/Dalessio498" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
+                            <a href="https://www.linkedin.com/in/marco-antonio-dalessio-5a4b9a379/?locale=en_US" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
